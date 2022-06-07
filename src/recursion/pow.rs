@@ -30,12 +30,16 @@ pub fn my_pow(x: f64, n: i32) -> f64 {
 }
 
 fn pow_recursion(x:f64, n:i32) -> f64{
+    // 递归终止条件
    if n == 0 {
        return 1.0;
 
    }
+    // 对应模板:处理当前层逻辑，将问题拆分为子问题
+    // 对应模板:下探到下一层，求解子问题
     let half = pow_recursion(x, n/2);
 
+    // 对应模板:将子问题的结果合并成原问题的解
     return if n % 2 == 0 {
         half * half
     }else { half * half * x }

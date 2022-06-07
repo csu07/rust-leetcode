@@ -25,11 +25,16 @@ fn recursion(n: usize, res: &mut Vec<i32>) -> i32 {
     if n <= 2 {
         return n as i32;
     }
+    // 对应模板:下探到下一层
+    // 到达第n-1阶的方法数
     if res[n - 1] == 0 {
         res[n - 1] = recursion(n - 1, res);
     }
+    // 对应模板:下探到下一层
+    // 到达第n-2阶的方法数
     if res[n - 2] == 0 {
         res[n - 2] = recursion(n - 2, res);
     }
+    // 到达第n阶的方法数是到达第n-1阶和第n-2阶的方法数之和
     return res[n - 1] + res[n - 2];
 }
