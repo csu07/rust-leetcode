@@ -3,6 +3,7 @@ use std::str::Chars;
 mod pow;
 mod climb;
 mod generate_parentheses;
+mod subsets;
 
 
 /*
